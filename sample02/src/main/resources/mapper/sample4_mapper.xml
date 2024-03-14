@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.sample4.SampleDao4">
+	<select id="findPosition" resultType="string">
+		select distinct position from emp2
+	</select>
+	
+	<select id="countGroupByPosition" resultType="long">
+		select count(*) as cnt from emp2 group by position
+	</select>
+	
+	<select id="countGroupByPosition2" resultType="map">
+		select deptno, count(*) as cnt from professor where hpage is not null group by deptno
+	</select>
+</mapper>
